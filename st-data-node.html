@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('get-data-node', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            authConfig: { type: "auth-config-node", required: true }, // Link to the auth config node
+            url: { value: "" } // Add URL field
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-download",
+        label: function () {
+            return this.name || "GET Data Node";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="get-data-node">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Node Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-authConfig"><i class="fa fa-cog"></i> Auth Config</label>
+        <input type="text" id="node-input-authConfig" placeholder="Select Auth Config Node">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-link"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="Enter the URL">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="get-data-node">
+    <p>
+        The <b>GET Data Node</b> is used to make a GET request to the ServiceTrade API or other endpoints.
+        It requires an authentication token provided by an <b>Auth Config Node</b>.
+    </p>
+    <p>
+        <b>Fields:</b>
+        <ul>
+            <li><b>Name:</b> A name to identify the node.</li>
+            <li><b>Auth Config:</b> Select the Auth Config Node to retrieve the token.</li>
+            <li><b>URL:</b> The URL to make the GET request to. Can be overridden by a <code>msg.url</code> property.</li>
+        </ul>
+    </p>
+</script>

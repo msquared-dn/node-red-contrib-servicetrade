@@ -1,0 +1,23 @@
+{
+    "name": "node-red-contrib-servicetrade",
+    "version": "1.0.0",
+    "description": "A custom Node-RED config node for ServiceTrade API authentication",
+    "main": "auth-config-node.js",
+    "dependencies": {
+      "axios": "^1.0.0"
+    },
+    "keywords": [
+      "node-red",
+      "auth",
+      "config-node"
+    ],
+    "node-red": {
+      "nodes": {
+        "auth-config-node": "auth-config-node.js",
+        "st-data-node": "st-data-node.js"
+      }
+    },
+    "author": "Marko Matevski",
+    "license": "MIT"
+  }
+  
